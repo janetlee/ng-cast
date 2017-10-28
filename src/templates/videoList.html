@@ -1,5 +1,5 @@
 <ul class="video-list">
   <video-list-entry
     video="video"
-    ng-repeat="video in $ctrl.videos track by $index"></video-list-entry>
+    ng-repeat="video in $ctrl.videos track by $index" on-click="$ctrl.onClick" index="$index"></video-list-entry>
 </ul>
