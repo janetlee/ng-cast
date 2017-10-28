@@ -29,6 +29,20 @@ angular.module('video-player')
       youTube.search(params, this.result.bind(this));
     };
 
+    this.videoDetails = () => {
+      youTube.getDetails(window.YOUTUBE_API_KEY, this.currentVideo.id.videoId, this.getLongDescription.bind(this));
+    };
+
+    this.onClickDescription = () => {
+      console.log('clicked');
+      this.videoDetails();
+    };
+    
+    this.getLongDescription = (video) => {
+      console.log(video);
+      this.currentVideo.snippet.description = video.snippet.description;
+    };
+
     this.searchResults('kittens');
   },
 

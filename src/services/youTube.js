@@ -24,4 +24,27 @@ angular.module('video-player')
     });
   };
 
+  this.getDetails = (key, id, callback) => {
+    const params = {
+      key,
+      part: 'snippet',
+      id
+    };
+    console.log('id', id);
+    // make the search by hitting the endpoint
+    $http({
+      method: 'GET',
+      url: 'https://www.googleapis.com/youtube/v3/videos/',
+      params: params
+    }).then((singleVideo) => {
+      console.log(singleVideo);
+
+      callback(singleVideo.data.items[0]);
+    }, (singleVideo) => {
+      console.log('Failure');
+    });
+  };
+
+
+
 });

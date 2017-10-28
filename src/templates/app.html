@@ -6,7 +6,7 @@
   </nav>
   <div class="row">
     <div class="col-md-7">
-      <video-player video="$ctrl.currentVideo">Please wait</video-player>
+      <video-player video="$ctrl.currentVideo" on-click-description="$ctrl.onClickDescription">Please wait</video-player>
     </div>
     <div class="col-md-5">
       <video-list videos="$ctrl.videos" on-click="$ctrl.onClick"></video-list>

@@ -6,6 +6,7 @@ angular.module('video-player')
   },
 
   controller: function(youTube) {
+    this.service = {};
     this.searchData = '';
     this.search = (query) => {
       const params = {
@@ -15,6 +16,7 @@ angular.module('video-player')
 
       youTube.search(params, this.result.bind(this));
     };
+
   },
 
   templateUrl: 'src/templates/search.html'

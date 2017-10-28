@@ -4,7 +4,7 @@
   </div>
   <div class="video-player-details" ng-show="$ctrl.video">
     <h3>{{$ctrl.video.snippet.title}}</h3>
-    <div>{{$ctrl.video.snippet.description}}</div>
+    <div ng-click="$ctrl.onClickDescription()"> {{$ctrl.video.snippet.description}}</div>
   </div>
   <div ng-if="!$ctrl.video">Please wait</div>
 </div>

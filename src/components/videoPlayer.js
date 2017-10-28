@@ -4,7 +4,8 @@ angular.module('video-player')
   // TODO
 
   bindings: {
-    video: '<'
+    video: '<',
+    onClickDescription: '<'
   },
 
   templateUrl: 'src/templates/videoPlayer.html'
