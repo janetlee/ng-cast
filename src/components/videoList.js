@@ -3,12 +3,18 @@ angular.module('video-player')
   // TODO
   bindings: {
     videos: '<',
-    selectVideo: '<'
+    onClick: '<'
   },
-  controller: function() {
-    this.onClick = (index) => {
-      this.selectVideo(this.videos[index]);
-    };
-  },
+  // controller: function() {
+
+  //   // this.select = (index) => {
+  //   //   this.selectVideo(this.videos[index]);
+  //   // };
+
+  //   // this.onClick = (index) => {
+  //   //   // this.selectVideo(this.videos[index]);
+  //   //   this.select(index);
+  //   // };
+  // },
   templateUrl: 'src/templates/videoList.html'
 });

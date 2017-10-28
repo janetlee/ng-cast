@@ -2,7 +2,7 @@ angular.module('video-player')
 
 .service('youTube', function($http) {
   // TODO
-  this.search = (callback, {query, maxResults = 5, key = YOUTUBE_API_KEY}) => {
+  this.search = ({query, maxResults = 5, key = YOUTUBE_API_KEY}, callback) => {
     const params = {
       q: query,
       maxResults,

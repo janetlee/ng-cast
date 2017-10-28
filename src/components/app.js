@@ -7,17 +7,17 @@ angular.module('video-player')
 
     this.currentVideo = window.exampleVideoData[0];
 
-    this.selectVideo = (video) => {
-      this.currentVideo = video;
-      console.log(this.currentVideo);
+    this.onClick = (index) => {
+      this.selectVideo(this.videos[index]);
     };
 
+    this.selectVideo = (video) => {
+      this.currentVideo = video;
+    };
 
-    this.handleSearchData = (videos) => {
-      console.log(videos);
+    this.result = (videos) => {
       this.videos = videos;
       this.currentVideo = this.videos[0];
-      console.log(this.currentVideo);
     };
 
     this.searchResults = (query) => {
@@ -27,7 +27,7 @@ angular.module('video-player')
         maxResults: 5,
         key: window.YOUTUBE_API_KEY};
 
-      youTube.search(this.handleSearchData.bind(this), params);
+      youTube.search(params, this.result.bind(this));
     };
 
     this.searchResults('kittens');
